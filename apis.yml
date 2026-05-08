@@ -3,7 +3,10 @@ url: https://raw.githubusercontent.com/api-evangelist/recraft/refs/heads/main/ap
 name: Recraft
 x-type: company
 description: >-
-  Recraft is an AI design platform offering image generation, vector output, and brand-style consistency. APIs cover image, vector, and style transfer generation.
+  Recraft is an AI design platform offering raster and vector image generation, image
+  editing, inpainting, background removal/generation, vectorization, upscaling, and style
+  creation. The Recraft API is REST-based at https://external.api.recraft.ai/v1, compatible
+  with the OpenAI Python client, and uses prepaid API Units billed at 1,000 units = $1.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - AI
@@ -14,10 +17,40 @@ tags:
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: recraft:platform
+    name: Recraft API
+    description: >-
+      REST API for raster and vector image generation (V4 Pro / V4 / V3 / V2), inpainting,
+      image-to-image, background replacement, style creation, vectorization, upscaling
+      (Crisp / Creative), background removal, region erase, and image variation. Bearer
+      token auth; Swagger at https://external.api.recraft.ai/doc/.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.recraft.ai/docs/api-reference/getting-started
+    baseURL: https://external.api.recraft.ai/v1
+    tags:
+      - Image Generation
+      - Vector
+      - Inpainting
+      - Background
+      - Upscaling
+      - Style
+    properties:
+      - type: Documentation
+        url: https://www.recraft.ai/docs/api-reference/getting-started
+      - type: Swagger
+        url: https://external.api.recraft.ai/doc/
+      - type: Pricing
+        url: https://www.recraft.ai/docs/api-reference/pricing
+      - type: SignUp
+        url: https://www.recraft.ai/profile/api
+      - type: LLMsTxt
+        url: https://www.recraft.ai/docs/llms.txt
 common:
   - type: Website
     url: https://www.recraft.ai/
+  - type: Documentation
+    url: https://www.recraft.ai/docs/
   - type: Plans
     url: plans/recraft-plans-pricing.yml
   - type: RateLimits

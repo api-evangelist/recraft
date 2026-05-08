@@ -5,7 +5,7 @@ provider: Recraft
 providerId: recraft
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - Image Generation
@@ -15,10 +15,15 @@ tags:
 - FinOps
 - Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for Recraft. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: >-
+  FOCUS-aligned FinOps view of Recraft. Recraft uses prepaid API Units (1,000 units = $1)
+  consumed per operation. Cost dominance comes from raster vs vector and version (V4 Pro is
+  ~6x V4 cost). Editing operations are largely cheap ($0.004-$0.08); only Creative upscale
+  matches V4 Pro pricing.
+notes: Right-size model version per workload; reserve V4 Pro for hero assets only.
 sources:
-- https://www.recraft.ai/
+- https://www.recraft.ai/docs/api-reference/pricing
+- https://www.recraft.ai/docs/api-reference/getting-started
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -29,15 +34,15 @@ alignedWith:
 publisherName: Recraft
 serviceCategory: AI
 billingModel:
-  pricingCategory: To Be Reconciled
-  billingFrequency: Monthly
+  pricingCategory: Prepaid Credits + Per-Operation Usage
+  billingFrequency: On Credit Purchase
   billingCurrency: USD
   chargeCategories:
   - Usage
   - Purchase
   - Adjustment
 focusColumns:
-  ServiceName: Recraft
+  ServiceName: Recraft API
   ServiceCategory: AI
   ProviderName: Recraft
   PublisherName: Recraft
@@ -45,22 +50,42 @@ focusColumns:
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: raster_generations
+  description: Raster image generation (V2/V3/V4/V4 Pro).
+  unit: image
   aggregation: sum
   dimensions:
   - account
-  - resource
+  - model
+- name: vector_generations
+  description: Vector image generation (V2/V3/V4/V4 Pro Vector).
+  unit: image
+  aggregation: sum
+  dimensions:
+  - account
+  - model
+- name: edit_operations
+  description: Image-to-image, inpainting, background replace, style creation, vectorize, bg-remove, upscale, region-erase.
+  unit: image
+  aggregation: sum
+  dimensions:
+  - account
+  - operation
+- name: api_units_purchased
+  description: Prepaid API Unit purchases.
+  unit: USD
+  aggregation: sum
+  dimensions:
+  - account
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Track unit drawdown by operation in Recraft profile.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Tag generations to creative project / brand.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Use V4 (not V4 Pro) for general work; reserve V4 Pro and Creative upscale for hero assets.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Assign budget owners per creative team / brand.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

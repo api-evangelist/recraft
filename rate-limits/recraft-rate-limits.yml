@@ -5,7 +5,7 @@ provider: Recraft
 providerId: recraft
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: partial
 tags:
 - AI
 - Image Generation
@@ -15,21 +15,31 @@ tags:
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Recraft. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  Recraft API access requires a positive API Unit balance; throughput is gated primarily by
+  available units rather than published HTTP RPS. Specific rate limits are not publicly
+  listed; standard 429 backoff applies.
+notes: API Unit balance is the primary gating mechanism; HTTP RPS limits are not public.
 sources:
-- https://www.recraft.ai/
+- https://www.recraft.ai/docs/api-reference/getting-started
+- https://www.recraft.ai/docs/api-reference/pricing
 responseCodes:
   throttled: 429
 limits:
-- name: Default
+- name: API Unit Balance
   scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  metric: api_units
+  limit: prepaid
+  notes: Account requires positive API Unit balance to call the API.
+- name: HTTP Requests
+  scope: account
+  metric: requests
+  limit: not publicly documented
 policies:
 - name: Backoff Strategy
   description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+- name: Unit Top-Up
+  description: Pre-purchase API Units in advance of high-volume jobs to avoid balance-based throttling.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
