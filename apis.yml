@@ -1,7 +1,7 @@
 aid: recraft
 url: https://raw.githubusercontent.com/api-evangelist/recraft/refs/heads/main/apis.yml
 name: Recraft
-x-type: company
+kind: company
 description: >-
   Recraft is an AI design platform offering raster and vector image generation, image
   editing, inpainting, background removal/generation, vectorization, upscaling, and style
