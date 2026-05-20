@@ -47,6 +47,10 @@ apis:
       - type: LLMsTxt
         url: https://www.recraft.ai/docs/llms.txt
 common:
+  - type: GitHubOrganization
+    url: https://github.com/recraft-ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/recraftai
   - type: Website
     url: https://www.recraft.ai/
   - type: Documentation
