@@ -1,0 +1,364 @@
+openapi: 3.1.0
+info:
+  title: Recraft API
+  description: Recraft generative image API for raster and vector image generation, editing, and processing.
+  version: "1.0.0"
+servers:
+  - url: https://external.api.recraft.ai
+    description: Recraft API
+security:
+  - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token authentication using a Recraft API token.
+paths:
+  /v1/images/generations:
+    post:
+      summary: Generate image
+      description: Generate an image from a text prompt.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [prompt]
+              properties:
+                prompt: { type: string }
+                n: { type: integer }
+                model: { type: string }
+                style: { type: string }
+                style_id: { type: string }
+                size: { type: string }
+                negative_prompt: { type: string }
+                response_format: { type: string }
+                text_layout: { type: object }
+                controls: { type: object }
+      responses:
+        "200":
+          description: Generated image data
+  /v1/images/generations/raster:
+    post:
+      summary: Generate raster image
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [prompt]
+              properties:
+                prompt: { type: string }
+                n: { type: integer }
+                model: { type: string }
+      responses:
+        "200":
+          description: Raster image output
+  /v1/images/generations/vector:
+    post:
+      summary: Generate vector image
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [prompt]
+              properties:
+                prompt: { type: string }
+                n: { type: integer }
+                model: { type: string }
+      responses:
+        "200":
+          description: Vector image output
+  /v1/styles:
+    post:
+      summary: Create style
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [style, files]
+              properties:
+                style: { type: string }
+                files:
+                  type: array
+                  items: { type: string, format: binary }
+      responses:
+        "200":
+          description: Style created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: { type: string, format: uuid }
+  /v1/images/imageToImage:
+    post:
+      summary: Image to image
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image, prompt, strength]
+              properties:
+                image: { type: string, format: binary }
+                prompt: { type: string }
+                strength: { type: number }
+                n: { type: integer }
+                model: { type: string }
+                style: { type: string }
+                style_id: { type: string }
+                response_format: { type: string }
+                negative_prompt: { type: string }
+      responses:
+        "200":
+          description: Modified image
+  /v1/images/inpaint:
+    post:
+      summary: Image inpainting
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image, mask, prompt]
+              properties:
+                image: { type: string, format: binary }
+                mask: { type: string, format: binary }
+                prompt: { type: string }
+      responses:
+        "200":
+          description: Inpainted image
+  /v1/images/outpaint:
+    post:
+      summary: Image outpainting
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image, prompt]
+              properties:
+                image: { type: string, format: binary }
+                prompt: { type: string }
+                expand_left: { type: integer }
+                expand_right: { type: integer }
+                expand_top: { type: integer }
+                expand_bottom: { type: integer }
+                size: { type: string }
+                zoom_out_percentage: { type: number }
+      responses:
+        "200":
+          description: Extended image
+  /v1/images/replaceBackground:
+    post:
+      summary: Replace background
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image, prompt]
+              properties:
+                image: { type: string, format: binary }
+                prompt: { type: string }
+      responses:
+        "200":
+          description: Image with replaced background
+  /v1/images/generateBackground:
+    post:
+      summary: Generate background
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image, mask, prompt]
+              properties:
+                image: { type: string, format: binary }
+                mask: { type: string, format: binary }
+                prompt: { type: string }
+      responses:
+        "200":
+          description: Image with generated background
+  /v1/images/vectorize:
+    post:
+      summary: Vectorize image
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image: { type: string, format: binary }
+                response_format: { type: string }
+      responses:
+        "200":
+          description: SVG image
+  /v1/images/removeBackground:
+    post:
+      summary: Remove background
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image: { type: string, format: binary }
+                response_format: { type: string }
+      responses:
+        "200":
+          description: Image with transparent background
+  /v1/images/crispUpscale:
+    post:
+      summary: Crisp upscale
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image: { type: string, format: binary }
+                response_format: { type: string }
+      responses:
+        "200":
+          description: Upscaled image
+  /v1/images/creativeUpscale:
+    post:
+      summary: Creative upscale
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image: { type: string, format: binary }
+                response_format: { type: string }
+      responses:
+        "200":
+          description: Creatively upscaled image
+  /v1/images/eraseRegion:
+    post:
+      summary: Erase region
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image, mask]
+              properties:
+                image: { type: string, format: binary }
+                mask: { type: string, format: binary }
+                response_format: { type: string }
+      responses:
+        "200":
+          description: Image with erased region
+  /v1/images/variateImage:
+    post:
+      summary: Remix image
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [image, size]
+              properties:
+                image: { type: string, format: binary }
+                size: { type: string }
+                n: { type: integer }
+                random_seed: { type: integer }
+                response_format: { type: string }
+                image_format: { type: string }
+      responses:
+        "200":
+          description: Image variations
+  /v1/images/explore:
+    post:
+      summary: Explore
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [prompt]
+              properties:
+                prompt: { type: string }
+                model: { type: string }
+                size: { type: string }
+                response_format: { type: string }
+                controls: { type: object }
+      responses:
+        "200":
+          description: Exploration image
+  /v1/images/explore/similar:
+    post:
+      summary: Explore similar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [source_image_id, similarity]
+              properties:
+                source_image_id: { type: string }
+                similarity: { type: number }
+                response_format: { type: string }
+      responses:
+        "200":
+          description: Similar image variations
+  /v1/prompts/enhance:
+    post:
+      summary: Enhance prompt
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [prompt]
+              properties:
+                prompt: { type: string }
+      responses:
+        "200":
+          description: Enhanced prompt
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  enhanced_prompt: { type: string }
+  /v1/users/me:
+    get:
+      summary: Get user information
+      responses:
+        "200":
+          description: User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: { type: string }
+                  email: { type: string }
+                  name: { type: string }
+                  credits: { type: integer }
