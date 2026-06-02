@@ -15,7 +15,7 @@ tags:
   - Vector
   - Style
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-05-30'
 specificationVersion: '0.19'
 apis:
   - aid: recraft:platform
@@ -61,6 +61,8 @@ common:
     url: rate-limits/recraft-rate-limits.yml
   - type: FinOps
     url: finops/recraft-finops.yml
+  - type: Review
+    url: review.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

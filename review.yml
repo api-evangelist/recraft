@@ -1,0 +1,40 @@
+name: Recraft
+description: Recraft API review — async, webhook, and streaming surface assessment.
+url: https://raw.githubusercontent.com/api-evangelist/recraft/refs/heads/main/review.yml
+created: '2026-05-30'
+modified: '2026-05-30'
+reviews:
+  - date: '2026-05-30'
+    focus: Async, webhook, and streaming surface
+    summary: >-
+      Recraft's public REST API at https://external.api.recraft.ai/v1 is entirely
+      synchronous. A review of the Getting Started guide, the published endpoints
+      reference, the Swagger UI at https://external.api.recraft.ai/doc/, and the
+      llms.txt index at https://www.recraft.ai/docs/llms.txt surfaced no documented
+      webhooks, callbacks, async job submission, task/job status polling, or
+      streaming (SSE) endpoints. Every documented operation — image generation,
+      raster/vector variants, imageToImage, inpaint, outpaint, replaceBackground,
+      generateBackground, vectorize, removeBackground, crispUpscale, creativeUpscale,
+      eraseRegion, variateImage, explore, explore/similar, prompts/enhance, styles,
+      and users/me — returns its result inline on the synchronous POST/GET response.
+      No event subscription, no delivery URL configuration, and no webhook signing
+      surface are exposed in the public documentation as of this review.
+    sources:
+      - https://www.recraft.ai/docs/api-reference/getting-started
+      - https://www.recraft.ai/docs/api-reference/endpoints
+      - https://www.recraft.ai/docs/api-reference/swagger
+      - https://external.api.recraft.ai/doc/
+      - https://www.recraft.ai/docs/llms.txt
+    findings:
+      - area: Webhooks
+        status: Not documented
+      - area: Callbacks
+        status: Not documented
+      - area: Async job submission
+        status: Not documented
+      - area: Job/task status polling
+        status: Not documented
+      - area: Streaming / SSE
+        status: Not documented
+      - area: Event subscriptions
+        status: Not documented
