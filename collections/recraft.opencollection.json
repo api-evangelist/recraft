@@ -1,0 +1,529 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Recraft API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Generate image",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/generations",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Generate an image from a text prompt."
+    },
+    {
+      "info": {
+        "name": "Generate raster image",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/generations/raster",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Generate raster image"
+    },
+    {
+      "info": {
+        "name": "Generate vector image",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/generations/vector",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Generate vector image"
+    },
+    {
+      "info": {
+        "name": "Create style",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/styles",
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "style",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "files",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Create style"
+    },
+    {
+      "info": {
+        "name": "Image to image",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/imageToImage",
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "image",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "prompt",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "strength",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "n",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "model",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "style",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "style_id",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "response_format",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "negative_prompt",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Image to image"
+    },
+    {
+      "info": {
+        "name": "Image inpainting",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/inpaint",
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "image",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "mask",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "prompt",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Image inpainting"
+    },
+    {
+      "info": {
+        "name": "Image outpainting",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/outpaint",
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "image",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "prompt",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "expand_left",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "expand_right",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "expand_top",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "expand_bottom",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "size",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "zoom_out_percentage",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Image outpainting"
+    },
+    {
+      "info": {
+        "name": "Replace background",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/replaceBackground",
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "image",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "prompt",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Replace background"
+    },
+    {
+      "info": {
+        "name": "Generate background",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/generateBackground",
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "image",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "mask",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "prompt",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Generate background"
+    },
+    {
+      "info": {
+        "name": "Vectorize image",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/vectorize",
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "image",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "response_format",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Vectorize image"
+    },
+    {
+      "info": {
+        "name": "Remove background",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/removeBackground",
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "image",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "response_format",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Remove background"
+    },
+    {
+      "info": {
+        "name": "Crisp upscale",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/crispUpscale",
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "image",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "response_format",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Crisp upscale"
+    },
+    {
+      "info": {
+        "name": "Creative upscale",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/creativeUpscale",
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "image",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "response_format",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Creative upscale"
+    },
+    {
+      "info": {
+        "name": "Erase region",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/eraseRegion",
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "image",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "mask",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "response_format",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Erase region"
+    },
+    {
+      "info": {
+        "name": "Remix image",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/variateImage",
+        "body": {
+          "type": "multipart-form",
+          "data": [
+            {
+              "name": "image",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "size",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "n",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "random_seed",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "response_format",
+              "type": "text",
+              "value": ""
+            },
+            {
+              "name": "image_format",
+              "type": "text",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "docs": "Remix image"
+    },
+    {
+      "info": {
+        "name": "Explore",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/explore",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Explore"
+    },
+    {
+      "info": {
+        "name": "Explore similar",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/images/explore/similar",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Explore similar"
+    },
+    {
+      "info": {
+        "name": "Enhance prompt",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://external.api.recraft.ai/v1/prompts/enhance",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Enhance prompt"
+    },
+    {
+      "info": {
+        "name": "Get user information",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.api.recraft.ai/v1/users/me"
+      },
+      "docs": "Get user information"
+    }
+  ],
+  "bundled": true
+}

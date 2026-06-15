@@ -1,35 +1,62 @@
 # Recraft (recraft)
 
-Recraft is an AI design platform offering raster and vector image generation, image editing, inpainting, background removal/generation, vectorization, upscaling, and style creation. The Recraft API is REST-based at `https://external.api.recraft.ai/v1`, compatible with the OpenAI Python client.
+Recraft is an AI design platform offering raster and vector image generation, image editing, inpainting, background removal/generation, vectorization, upscaling, and style creation. The Recraft API is REST-based at https://external.api.recraft.ai/v1, compatible with the OpenAI Python client, and uses prepaid API Units billed at 1,000 units = $1.
 
-**APIs.json:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/recraft/refs/heads/main/apis.yml)
-
-## Type
-- **x-type:** company
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/recraft/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/recraft/refs/heads/main/apis.yml)
 
 ## Tags
-- AI, Image Generation, Design, Vector, Style
+
+- AI
+- Image Generation
+- Design
+- Vector
+- Style
+
+## Timestamps
+
+- **Created:** 2026-05-08
+- **Modified:** 2026-05-30
 
 ## APIs
-1. **Recraft API** — REST API at `https://external.api.recraft.ai/v1`. Swagger at https://external.api.recraft.ai/doc/. Bearer token auth.
+
+### Recraft API
+
+REST API for raster and vector image generation (V4 Pro / V4 / V3 / V2), inpainting, image-to-image, background replacement, style creation, vectorization, upscaling (Crisp / Creative), background removal, region erase, and image variation. Bearer token auth; Swagger at https://external.api.recraft.ai/doc/.
+
+- **Human URL:** [https://www.recraft.ai/docs/api-reference/getting-started](https://www.recraft.ai/docs/api-reference/getting-started)
+- **Base URL:** `https://external.api.recraft.ai/v1`
+
+#### Tags
+
+- Image Generation
+- Vector
+- Inpainting
+- Background
+- Upscaling
+- Style
+
+#### Properties
+
+- [Documentation](https://www.recraft.ai/docs/api-reference/getting-started)
+- [Swagger](https://external.api.recraft.ai/doc/)
+- [Pricing](https://www.recraft.ai/docs/api-reference/pricing)
+- [Sign Up](https://www.recraft.ai/profile/api)
+- [L L Ms Txt](https://www.recraft.ai/docs/llms.txt)
+- [Postman Collection](collections/recraft.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/recraft.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
 ## Common Properties
+
+- [GitHub Organization](https://github.com/recraft-ai)
+- [LinkedIn](https://www.linkedin.com/company/recraftai)
 - [Website](https://www.recraft.ai/)
 - [Documentation](https://www.recraft.ai/docs/)
-- [Plans](plans/recraft-plans-pricing.yml) — reconciled
-- [RateLimits](rate-limits/recraft-rate-limits.yml) — partial
-- [FinOps](finops/recraft-finops.yml) — reconciled
-
-## Pricing Snapshot
-- API Units: 1,000 units = $1.00 USD (prepaid)
-- Raster: V4 Pro $0.25 / V4 $0.04 / V3 $0.04 / V2 $0.022 per image
-- Vector: V4 Pro $0.30 / V4 $0.08 / V3 $0.08 / V2 $0.044 per image
-- Edits: $0.04–$0.08 per image (image-to-image, inpaint, bg replace)
-- Background remove / vectorize: $0.01 per image
-- Upscale Crisp: $0.004; Upscale Creative: $0.25
-- Region erase: $0.002
+- [Plans](plans/recraft-plans-pricing.yml)
+- [Rate Limits](rate-limits/recraft-rate-limits.yml)
+- [Fin Ops](finops/recraft-finops.yml)
+- [Review](review.yml)
 
 ## Maintainers
-**FN:** Kin Lane
 
+**FN:** Kin Lane
 **Email:** kin@apievangelist.com
