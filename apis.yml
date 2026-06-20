@@ -7,7 +7,7 @@ description: >-
   editing, inpainting, background removal/generation, vectorization, upscaling, and style
   creation. The Recraft API is REST-based at https://external.api.recraft.ai/v1, compatible
   with the OpenAI Python client, and uses prepaid API Units billed at 1,000 units = $1.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - AI
   - Image Generation
@@ -25,7 +25,7 @@ apis:
       image-to-image, background replacement, style creation, vectorization, upscaling
       (Crisp / Creative), background removal, region erase, and image variation. Bearer
       token auth; Swagger at https://external.api.recraft.ai/doc/.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.recraft.ai/docs/api-reference/getting-started
     baseURL: https://external.api.recraft.ai/v1
     tags:
