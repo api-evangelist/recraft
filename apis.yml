@@ -42,9 +42,9 @@ apis:
         url: https://external.api.recraft.ai/doc/
       - type: Pricing
         url: https://www.recraft.ai/docs/api-reference/pricing
-      - type: SignUp
+      - type: Signup
         url: https://www.recraft.ai/profile/api
-      - type: LLMsTxt
+      - type: LlmsText
         url: https://www.recraft.ai/docs/llms.txt
 common:
   - type: GitHubOrganization
