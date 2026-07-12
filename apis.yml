@@ -47,6 +47,14 @@ apis:
       - type: LlmsText
         url: https://www.recraft.ai/docs/llms.txt
 common:
+  - type: TrustCenter
+    url: security/recraft-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/recraft-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/recraft-domain-security.yml
+  - type: Authentication
+    url: authentication/recraft-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/recraft-ai
   - type: LinkedIn

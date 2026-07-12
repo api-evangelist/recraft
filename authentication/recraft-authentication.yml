@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/recraft-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: Bearer token authentication using a Recraft API token.
+  sources:
+  - openapi/recraft-openapi.yml
