@@ -47,6 +47,8 @@ apis:
       - type: LlmsText
         url: https://www.recraft.ai/docs/llms.txt
 common:
+  - type: AgenticAccess
+    url: agentic-access/recraft-agentic-access.yml
   - type: TrustCenter
     url: security/recraft-trust-center.yml
   - type: VulnerabilityDisclosure
