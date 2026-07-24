@@ -1,0 +1,52 @@
+openapi: 3.1.0
+info:
+  title: Recraft Images Styles API
+  description: Recraft generative image API for raster and vector image generation, editing, and processing.
+  version: 1.0.0
+servers:
+- url: https://external.api.recraft.ai
+  description: Recraft API
+security:
+- bearerAuth: []
+tags:
+- name: Styles
+paths:
+  /v1/styles:
+    post:
+      summary: Create style
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - style
+              - files
+              properties:
+                style:
+                  type: string
+                files:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+      responses:
+        '200':
+          description: Style created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+      tags:
+      - Styles
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token authentication using a Recraft API token.

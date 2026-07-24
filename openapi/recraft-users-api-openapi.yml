@@ -1,0 +1,40 @@
+openapi: 3.1.0
+info:
+  title: Recraft Images Users API
+  description: Recraft generative image API for raster and vector image generation, editing, and processing.
+  version: 1.0.0
+servers:
+- url: https://external.api.recraft.ai
+  description: Recraft API
+security:
+- bearerAuth: []
+tags:
+- name: Users
+paths:
+  /v1/users/me:
+    get:
+      summary: Get user information
+      responses:
+        '200':
+          description: User object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  email:
+                    type: string
+                  name:
+                    type: string
+                  credits:
+                    type: integer
+      tags:
+      - Users
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token authentication using a Recraft API token.
