@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Recraft Images Styles API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Styles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create style",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://external.api.recraft.ai/v1/styles",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "style",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "files",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Create style"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

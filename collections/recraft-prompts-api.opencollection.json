@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Recraft Images Prompts API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Prompts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enhance prompt",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://external.api.recraft.ai/v1/prompts/enhance",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enhance prompt"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
