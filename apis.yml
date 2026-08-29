@@ -7,6 +7,18 @@ description: >-
   editing, inpainting, background removal/generation, vectorization, upscaling, and style
   creation. The Recraft API is REST-based at https://external.api.recraft.ai/v1, compatible
   with the OpenAI Python client, and uses prepaid API Units billed at 1,000 units = $1.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
