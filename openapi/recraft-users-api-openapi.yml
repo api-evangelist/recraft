@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Recraft Images Users API
+  title: Recraft Users API
   description: Recraft generative image API for raster and vector image generation, editing, and processing.
   version: 1.0.0
 servers:
@@ -32,6 +32,8 @@ paths:
                     type: integer
       tags:
       - Users
+      operationId: getV1UsersMe
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:

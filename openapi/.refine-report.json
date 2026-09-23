@@ -1,10 +1,7 @@
 {
   "provider": "recraft",
   "sources": [
-    "recraft-images-api-openapi.yml",
-    "recraft-prompts-api-openapi.yml",
-    "recraft-styles-api-openapi.yml",
-    "recraft-users-api-openapi.yml"
+    "_original/recraft-openapi.yml"
   ],
   "outputs": [
     "recraft-images-api-openapi.yml",
@@ -15,6 +12,38 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "recraft-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "recraft-openapi.yml: tagged paths POST /v1/images/generations -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/generations/raster -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/generations/vector -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/styles -> Styles",
+    "recraft-openapi.yml: tagged paths POST /v1/images/imageToImage -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/inpaint -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/outpaint -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/replaceBackground -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/generateBackground -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/vectorize -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/removeBackground -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/crispUpscale -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/creativeUpscale -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/eraseRegion -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/variateImage -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/explore -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/images/explore/similar -> Images",
+    "recraft-openapi.yml: tagged paths POST /v1/prompts/enhance -> Prompts",
+    "recraft-openapi.yml: tagged paths GET /v1/users/me -> Users",
+    "recraft-openapi.yml: declared missing tag: Images",
+    "recraft-openapi.yml: declared missing tag: Prompts",
+    "recraft-openapi.yml: declared missing tag: Styles",
+    "recraft-openapi.yml: declared missing tag: Users",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "recraft-images-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "recraft-prompts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "recraft-styles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "recraft-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

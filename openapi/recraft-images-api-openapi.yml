@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Recraft Images API
   description: Recraft generative image API for raster and vector image generation, editing, and processing.
@@ -49,6 +49,8 @@ paths:
           description: Generated image data
       tags:
       - Images
+      operationId: postV1ImagesGenerations
+      x-operation-id-source: derived
   /v1/images/generations/raster:
     post:
       summary: Generate raster image
@@ -72,6 +74,8 @@ paths:
           description: Raster image output
       tags:
       - Images
+      operationId: postV1ImagesGenerationsRaster
+      x-operation-id-source: derived
   /v1/images/generations/vector:
     post:
       summary: Generate vector image
@@ -95,6 +99,8 @@ paths:
           description: Vector image output
       tags:
       - Images
+      operationId: postV1ImagesGenerationsVector
+      x-operation-id-source: derived
   /v1/images/imageToImage:
     post:
       summary: Image to image
@@ -133,6 +139,8 @@ paths:
           description: Modified image
       tags:
       - Images
+      operationId: postV1ImagesImageToImage
+      x-operation-id-source: derived
   /v1/images/inpaint:
     post:
       summary: Image inpainting
@@ -160,6 +168,8 @@ paths:
           description: Inpainted image
       tags:
       - Images
+      operationId: postV1ImagesInpaint
+      x-operation-id-source: derived
   /v1/images/outpaint:
     post:
       summary: Image outpainting
@@ -195,6 +205,8 @@ paths:
           description: Extended image
       tags:
       - Images
+      operationId: postV1ImagesOutpaint
+      x-operation-id-source: derived
   /v1/images/replaceBackground:
     post:
       summary: Replace background
@@ -218,6 +230,8 @@ paths:
           description: Image with replaced background
       tags:
       - Images
+      operationId: postV1ImagesReplaceBackground
+      x-operation-id-source: derived
   /v1/images/generateBackground:
     post:
       summary: Generate background
@@ -245,6 +259,8 @@ paths:
           description: Image with generated background
       tags:
       - Images
+      operationId: postV1ImagesGenerateBackground
+      x-operation-id-source: derived
   /v1/images/vectorize:
     post:
       summary: Vectorize image
@@ -265,6 +281,8 @@ paths:
           description: SVG image
       tags:
       - Images
+      operationId: postV1ImagesVectorize
+      x-operation-id-source: derived
   /v1/images/removeBackground:
     post:
       summary: Remove background
@@ -285,6 +303,8 @@ paths:
           description: Image with transparent background
       tags:
       - Images
+      operationId: postV1ImagesRemoveBackground
+      x-operation-id-source: derived
   /v1/images/crispUpscale:
     post:
       summary: Crisp upscale
@@ -305,6 +325,8 @@ paths:
           description: Upscaled image
       tags:
       - Images
+      operationId: postV1ImagesCrispUpscale
+      x-operation-id-source: derived
   /v1/images/creativeUpscale:
     post:
       summary: Creative upscale
@@ -325,6 +347,8 @@ paths:
           description: Creatively upscaled image
       tags:
       - Images
+      operationId: postV1ImagesCreativeUpscale
+      x-operation-id-source: derived
   /v1/images/eraseRegion:
     post:
       summary: Erase region
@@ -351,6 +375,8 @@ paths:
           description: Image with erased region
       tags:
       - Images
+      operationId: postV1ImagesEraseRegion
+      x-operation-id-source: derived
   /v1/images/variateImage:
     post:
       summary: Remix image
@@ -382,6 +408,8 @@ paths:
           description: Image variations
       tags:
       - Images
+      operationId: postV1ImagesVariateImage
+      x-operation-id-source: derived
   /v1/images/explore:
     post:
       summary: Explore
@@ -409,6 +437,8 @@ paths:
           description: Exploration image
       tags:
       - Images
+      operationId: postV1ImagesExplore
+      x-operation-id-source: derived
   /v1/images/explore/similar:
     post:
       summary: Explore similar
@@ -433,6 +463,8 @@ paths:
           description: Similar image variations
       tags:
       - Images
+      operationId: postV1ImagesExploreSimilar
+      x-operation-id-source: derived
 components:
   securitySchemes:
     bearerAuth:
