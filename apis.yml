@@ -36,7 +36,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/recraft.png
 tags:
   - Artificial Intelligence
-  - Image-Generation
+  - Image Generation
   - Design
   - Vectors
   - Styles
@@ -46,6 +46,7 @@ tags_raw:
   - Design
   - Vector
   - Style
+  - Image-Generation
 created: '2026-05-08'
 modified: '2026-05-30'
 specificationVersion: '0.23'
@@ -60,7 +61,7 @@ apis:
   humanURL: https://www.recraft.ai/docs/api-reference/getting-started
   baseURL: https://external.api.recraft.ai/v1
   tags:
-  - Image-Generation
+  - Image Generation
   - Vectors
   - Inpainting
   - Background
@@ -73,6 +74,7 @@ apis:
   - Background
   - Upscaling
   - Style
+  - Image-Generation
   properties:
   - type: Documentation
     url: https://www.recraft.ai/docs/api-reference/getting-started
