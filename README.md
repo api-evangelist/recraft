@@ -1,4 +1,4 @@
-# Recraft (recraft)
+# Recraft
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,61 +66,132 @@
 
 Recraft is an AI design platform offering raster and vector image generation, image editing, inpainting, background removal/generation, vectorization, upscaling, and style creation. The Recraft API is REST-based at https://external.api.recraft.ai/v1, compatible with the OpenAI Python client, and uses prepaid API Units billed at 1,000 units = $1.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/recraft/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/recraft/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · Image Generation · Design · Vectors · Styles
 
-## Tags
+## Recraft on APIs.io
 
-- AI
-- Image Generation
-- Design
-- Vector
-- Style
+Everything profiled for Recraft is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/recraft/](https://apis.io/providers/recraft/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (5)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-30
+- [Recraft API](https://apis.io/apis/recraft/platform/) — REST API for raster and vector image generation (V4 Pro / V4 / V3 / V2), inpainting, image-to-image, background replacement, style creation, vectorization,…
+- [Recraft Images API](https://apis.io/apis/recraft/recraft-images-api/) — The Images API from Recraft — 16 operation(s) for images.
+- [Recraft Prompts API](https://apis.io/apis/recraft/recraft-prompts-api/) — The Prompts API from Recraft — 1 operation(s) for prompts.
+- [Recraft Styles API](https://apis.io/apis/recraft/recraft-styles-api/) — The Styles API from Recraft — 1 operation(s) for styles.
+- [Recraft Users API](https://apis.io/apis/recraft/recraft-users-api/) — The Users API from Recraft — 1 operation(s) for users.
 
-## APIs
+### Published properties
 
-### Recraft API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-REST API for raster and vector image generation (V4 Pro / V4 / V3 / V2), inpainting, image-to-image, background replacement, style creation, vectorization, upscaling (Crisp / Creative), background removal, region erase, and image variation. Bearer token auth; Swagger at https://external.api.recraft.ai/doc/.
+#### MCP servers (1)
 
-- **Human URL:** [https://www.recraft.ai/docs/api-reference/getting-started](https://www.recraft.ai/docs/api-reference/getting-started)
-- **Base URL:** `https://external.api.recraft.ai/v1`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [Moved to /providers/recraft/](https://apis.io/servers/recraft/recraft/)
 
-- Image Generation
-- Vector
-- Inpainting
-- Background
-- Upscaling
-- Style
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://www.recraft.ai/docs/api-reference/getting-started)
-- [Swagger](https://external.api.recraft.ai/doc/)
-- [Pricing](https://www.recraft.ai/docs/api-reference/pricing)
-- [Sign Up](https://www.recraft.ai/profile/api)
-- [L L Ms Txt](https://www.recraft.ai/docs/llms.txt)
-- [Postman Collection](collections/recraft.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/recraft.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Recraft Agentic Access](https://apis.io/agentic-access/recraft/recraft-agentic-access/)
 
-## Common Properties
+#### Collections (5)
 
-- [GitHub Organization](https://github.com/recraft-ai)
-- [LinkedIn](https://www.linkedin.com/company/recraftai)
+Postman and Open Collection request collections.
+
+- [Recraft API](https://apis.io/collections/recraft/open-recraft/)
+- [Recraft Images API](https://apis.io/collections/recraft/open-recraft-images-api/)
+- [Recraft Images Prompts API](https://apis.io/collections/recraft/open-recraft-prompts-api/)
+- [Recraft Images Styles API](https://apis.io/collections/recraft/open-recraft-styles-api/)
+- [Recraft Images Users API](https://apis.io/collections/recraft/open-recraft-users-api/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Recraft Authentication](https://apis.io/security/recraft/recraft-authentication/)
+- [Recraft Domain Security](https://apis.io/security/recraft/recraft-domain-security/)
+- [Recraft Trust Center](https://apis.io/security/recraft/recraft-trust-center/)
+- [Recraft Vulnerability Disclosure](https://apis.io/security/recraft/recraft-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Recraft Plans Pricing](https://apis.io/plans/recraft/recraft-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Recraft Rate Limits](https://apis.io/rate-limits/recraft/recraft-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Recraft Finops](https://apis.io/finops/recraft/recraft-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.recraft.ai/)
 - [Documentation](https://www.recraft.ai/docs/)
-- [Plans](plans/recraft-plans-pricing.yml)
-- [Rate Limits](rate-limits/recraft-rate-limits.yml)
-- [Fin Ops](finops/recraft-finops.yml)
-- [Review](review.yml)
+- [GitHub](https://github.com/recraft-ai)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 32.0** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 42.9 |
+| Contract governance | 0.0 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 36.8 |
+
+**Agent readiness 31.6** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 20.9** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/recraft/](https://apis.io/providers/recraft/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Recraft: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/recraft/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
